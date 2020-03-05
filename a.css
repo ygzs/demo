@@ -68,10 +68,9 @@ a{
 .banner{
     height: 515px;
     background-image: url(./img/rs.jpg);
-    background-position: center;
+    background-position: center center;
     background-size: cover;
-     
-}
+}    
 .banner .mask{
     height: 515px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -93,4 +92,15 @@ a{
     display: inline-block;
     padding: 4px 11px 4px 11px;
     line-height: 22px;
+    position: relative;
+}
+.welcome .triangle{
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 100%;
 }
