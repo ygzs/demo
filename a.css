@@ -85,10 +85,11 @@ a{
     background-color: rgba(0, 0, 0, 0.8);
 }
 .usercard{
-    max-width: 940px;
+    max-width: 920px;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
 }
 .usercard .picture img{
     width: 299px;
@@ -113,7 +114,7 @@ a{
     top: 100%;
 }
 .usercard .PictureAndText{
-    padding: 50px;
+    padding: 40px 50px 40px 50px;
 }
 .usercard .text{
     float: left;
@@ -165,4 +166,32 @@ a{
 }
 .usercard .media a:hover{
     background: #cf5d5f;
+}
+main .download-resume-wrapper{
+    text-align: center;
+}
+main .download-resume{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 32px 0px;
+    transition: box-shadow 0.2s;
+}
+main .download-resume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+main .self-introduction{
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 18px;
+    font-family: kai;
+    line-height: 39px;
 }
