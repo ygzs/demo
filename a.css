@@ -198,19 +198,21 @@ main .self-introduction{
     font-family: kai;
     line-height: 39px;
 }
-.skills{
+.skills,
+.portfolio{
     max-width: 920px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 60px;
 }
-.skills h2{
+.skills h2,
+.portfolio h2{
     color: #3d4451;
     font-size: 34px;
     line-height: 1.2;
     font-weight: 600;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 .skills ol{
     list-style: none;
@@ -242,4 +244,66 @@ main .self-introduction{
     background: #e6686a;
     width: 70%;
     border-radius: 2px;
+
+}
+.portfolio{
+    text-align: center;
+}
+.portfolio nav{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+.portfolio nav ol{
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.portfolio nav ol li{
+    margin-left: 50px;
+    float: left;
+    cursor: pointer;
+}
+.portfolio nav ol li:nth-child(1){
+    margin-left: 0px;
+}
+.portfolio nav .bar{
+    margin-top: 10px;
+    height: 5px;
+    background-color: #fae1e1;
+    border-radius: 2px;
+}
+.portfolio nav .bar-in{
+    height: 100%;
+    background-color: #e6686a;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.portfolio nav .bar.state-1 .bar-in{
+    margin-left: 0px;
+    width: 42px;
+}
+.portfolio nav .bar.state-2 .bar-in{
+    margin-left: 80px;
+    width: 50px;
+}
+.portfolio nav .bar.state-3 .bar-in{
+    margin-left: 165px;
+    width: 95px;
+}
+.portfolio .works{
+    margin-top: 30px;
+    position: relative;
+    height: 570px;
+    margin-bottom: 400px;
+}
+.portfolio .works .big{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.portfolio .works .small{
+    position: absolute;
 }

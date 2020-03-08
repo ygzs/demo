@@ -125,19 +125,42 @@
 			</li>
 		</ol>
 	</section>
-	<section>
+	<section class="portfolio">
 		<h2>作品集</h2>
-		<nav>
-			<ol>
-				<li>所有</li>
-				<li>框架</li>
-				<li>原生 js&amp;css </li>
+		<nav> 
+			<ol class="clearfix">
+				<li id="portfolio1">所有</li>
+				<li id="portfolio2">框架</li>
+				<li id="portfolio3">原生 js&amp;css </li>
 			</ol>
+		<div id="portfoliobar" class="bar state-1">
+			<div class="bar-in"></div>
+		</div>
 		</nav>
-		<div class="jobs">
-			<div class="big"></div>
-			<div class="small"></div>
-			<div class="small"></div>
+		<script>
+			portfolio1.onclick=function(){
+				portfoliobar.className = "bar state-1"
+			}
+			portfolio2.onclick=function(){
+				portfoliobar.className = 'bar state-2'
+			}
+			portfolio3.onclick=function(){
+				portfoliobar.className = 'bar state-3'
+			}
+		</script>
+		<div class="works">
+			<div class="big">
+				<img src="./img/work1.jpg" alt="作品1" 
+				style="width: 600px; height: 570px;">
+			</div>
+			<div class="small" style="top: 0px; left: 628px;">
+				<img src="./img/work2.jpg" alt="作品2" 
+				style="width: 290px; height: 270px;">
+			</div>
+			<div class="small" style="top: 300px; left: 628px;">
+				<img src="./img/work3.jpg" alt="作品3" 
+				style="width: 290px; height: 270px;">
+			</div>
 		  </div>	
 	</section>
 </body>
