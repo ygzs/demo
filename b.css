@@ -1,0 +1,44 @@
+.FirstOfAll{
+    display: none;
+    position: fixed;
+    top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 1;
+}
+.FirstOfAll.active{
+    display: flex;
+}
+.loading{
+	width: 200px;
+	height: 200px;
+	position: relative;
+}
+.loading::before,
+.loading::after{
+	content: '';
+	width: 0px;
+	height: 0px;
+	border-radius: 50%;
+	position: absolute;
+	background: black;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	animation: s 1.5s linear infinite;
+}
+.loading::after{
+	animation-delay: 0.75s;
+}
+@keyframes s{
+	0%{
+		width: 0px; height: 0px; opacity: 1;
+	}
+	100%{
+		width: 150px; height: 150px; opacity: 0;
+	}
+}

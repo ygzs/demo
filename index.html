@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>个人简历</title>
-	<link rel="stylesheet" href="./a.css">
+	<link rel="stylesheet" href="./b.css">
+	<link rel="stylesheet" href="./main.css">
 	<script src="//at.alicdn.com/t/font_1675670_wvjuh9iw2sr.js"></script>
 	<style type="text/css">
 		.icon {
@@ -16,6 +17,9 @@
 	</style>
 </head>
 <body>
+	<div id="FirstOfAll" class="FirstOfAll active">
+		<div class="loading"></div>
+	</div>
 	<div class="top-nav-bar">
 		<div class="top-nav-bar-in clearfix">
 			<a class="logo" href="#" alt="logo" style="float: left;">
@@ -41,7 +45,7 @@
 			    <div class="picture">
 				    <img src="./img/wo.jpg" alt="头像">
 			    </div>
-		        <div class="text">
+				<div class="text">
 				    <span class="welcome">您好！
 						<span class="triangle"></span>
 					</span>
@@ -163,5 +167,10 @@
 			</div>
 		  </div>	
 	</section>
+	<script>
+		setTimeout(function(){
+			FirstOfAll.classList.remove('active')
+		},2000)
+	</script>
 </body>
 </html>
