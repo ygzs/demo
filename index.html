@@ -20,8 +20,8 @@
 	<div id="FirstOfAll" class="FirstOfAll active">
 		<div class="loading"></div>
 	</div>
-	<div class="top-nav-bar">
-		<div class="top-nav-bar-in clearfix">
+	<div id="TopNavBar" class="TopNavBar">
+		<div class="TopNavBar-in clearfix">
 			<a class="logo" href="#" alt="logo" style="float: left;">
 				<span class="rs">RS</span><span class="card">card</span>  
 			</a>
@@ -37,7 +37,7 @@
 			</ul>
 		</nav>
 		</div>
-		</div>
+	</div>
 		<div class="banner"><div class="mask"></div></div>
 	<main style="margin-top: -350px ;">
 		<div class="usercard">
@@ -171,6 +171,14 @@
 		setTimeout(function(){
 			FirstOfAll.classList.remove('active')
 		},2000)
+		window.onscroll = function(xxx){
+			if(window.scrollY > 0){
+				TopNavBar.classList.add('stick')
+			}
+			else{
+				TopNavBar.classList.remove('stick')
+			}
+		}
 	</script>
 </body>
 </html>
