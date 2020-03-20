@@ -52,8 +52,8 @@
 		</div>
 	</div>
 		<div class="banner"><div class="mask"></div></div>
-	<main id="siteAbout" style="margin-top: -350px ;">
-		<div class="usercard">
+	<main style="margin-top: -350px ;">
+		<div data-x="x" id="siteAbout" class="usercard">
 			<div class="PictureAndText clearfix">
 			    <div class="picture">
 				    <img src="./img/wo.jpg" alt="头像">
@@ -107,7 +107,7 @@
 
 	</p>
 	</main>
-    <section id="siteSkills" class="skills">
+    <section data-x="x" id="siteSkills" class="skills">
 		<h2>技能</h2>
 		<ol class="clearfix">
 			<li>HTML 5 &amp; CSS 3
@@ -142,7 +142,7 @@
 			</li>
 		</ol>
 	</section>
-	<section id="siteWorks" class="portfolio">
+	<section data-x="x" id="siteWorks" class="portfolio">
 		<h2>作品集</h2>
 		<nav> 
 			<ol class="clearfix">
@@ -192,6 +192,22 @@
 			else{
 				TopNavBar.classList.remove('stick')
 			}
+			let specialTags = document.querySelectorAll('[data-x]')
+			let minIndex = 0
+			for (let index = 1; index < specialTags.length; index++) {
+				if(Math.abs(specialTags[index].offsetTop -window.scrollY) <
+				Math.abs(specialTags[minIndex].offsetTop - window.scrollY) ){
+					minIndex = index
+				}
+			}
+			let id = specialTags[minIndex].id
+			let a = document.querySelector(' a[href="#' + id + '"] ')
+			let li = a.parentNode
+			let brothersAndMe = li.parentNode.children
+			for(let i = 0; i < brothersAndMe.length; i++){
+				brothersAndMe[i].classList.remove('highlight')	
+			}
+			li.classList.add('highlight')	
 		}
 		let liTags = document.querySelectorAll('nav.menu > ul > li')
 		for (let i = 0; i < liTags.length; i++) {
@@ -215,7 +231,6 @@
 				let href = a.getAttribute('href')
 				let element = document.querySelector(href)
 				let top = element.offsetTop
-
 				let currentTop = window.scrollY
 				let targetTop = top-70
 				let s = targetTop - currentTop
@@ -230,7 +245,7 @@
         			.onUpdate( function() {
 						window.scrollTo(0,coords.y)		//更新界面
         			})
-        			.start();		//开始缓动
+        			.start();		//开始
 			}	
 		}
 	</script>

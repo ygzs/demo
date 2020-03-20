@@ -67,7 +67,8 @@ h1,h2,h3,h4,h5,h6{
     display: block;
     position: relative;
 }
-.TopNavBar nav>ul>li.active>a::after{
+.TopNavBar nav>ul>li.active>a::after,
+.TopNavBar nav>ul>li.highlight>a::after{
     content: '';
     display: block;
     position: absolute;
