@@ -53,7 +53,7 @@
 	</div>
 		<div class="banner"><div class="mask"></div></div>
 	<main style="margin-top: -350px ;">
-		<div data-x="x" id="siteAbout" class="usercard">
+		<div data-x id="siteAbout" class="usercard">
 			<div class="PictureAndText clearfix">
 			    <div class="picture">
 				    <img src="./img/wo.jpg" alt="头像">
@@ -107,42 +107,42 @@
 
 	</p>
 	</main>
-    <section data-x="x" id="siteSkills" class="skills">
+    <section data-x id="siteSkills" class="skills">
 		<h2>技能</h2>
 		<ol class="clearfix">
 			<li>HTML 5 &amp; CSS 3
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress" style="width: 80%;"></div>
 				</div>
 			</li>
 			<li>JavaScript
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress" style="width: 70%;"></div>
 				</div>
 			</li>
 			<li>jQuery
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress" style="width: 60%;"></div>
 				</div>
 			</li>
 			<li>Vue
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress" style="width: 50%;"></div>
 				</div>
 			</li>
 			<li>React
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress"style="width: 40%;"></div>
 				</div>
 			</li>
 			<li>HTTP
 				<div class="progress-bar">
-					<div class="progress"></div>
+					<div class="progress" style="width: 30%;"></div>
 				</div>
 			</li>
 		</ol>
 	</section>
-	<section data-x="x" id="siteWorks" class="portfolio">
+	<section data-x id="siteWorks" class="portfolio">
 		<h2>作品集</h2>
 		<nav> 
 			<ol class="clearfix">
@@ -182,9 +182,16 @@
 	</section>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 	<script>
+		//延迟出现loading
 		setTimeout(function(){
 			FirstOfAll.classList.remove('active')
 		},2000)
+		//先给所有data-x元素加上offset
+		let specialTags = document.querySelectorAll('[data-x]')
+		for (let index = 1; index < specialTags.length; index++) {
+			specialTags[index].classList.add('offset')
+		}
+		//判断屏幕是否滚动
 		window.onscroll = function(xxx){
 			if(window.scrollY > 0){
 				TopNavBar.classList.add('stick')
@@ -192,6 +199,7 @@
 			else{
 				TopNavBar.classList.remove('stick')
 			}
+			//查找离视口顶部最近的元素
 			let specialTags = document.querySelectorAll('[data-x]')
 			let minIndex = 0
 			for (let index = 1; index < specialTags.length; index++) {
@@ -200,15 +208,19 @@
 					minIndex = index
 				}
 			}
-			let id = specialTags[minIndex].id
-			let a = document.querySelector(' a[href="#' + id + '"] ')
-			let li = a.parentNode
-			let brothersAndMe = li.parentNode.children
+			//去除offset
+			specialTags[minIndex].classList.remove('offset')
+			//高亮当前的元素
+			let id = specialTags[minIndex].id	//最近的元素的id
+			let a = document.querySelector(' a[href="#' + id + '"] ')	//id对应的a标签
+			let li = a.parentNode	//父节点li
+			let brothersAndMe = li.parentNode.children	//包括自己的所有li
 			for(let i = 0; i < brothersAndMe.length; i++){
 				brothersAndMe[i].classList.remove('highlight')	
 			}
-			li.classList.add('highlight')	
+			li.classList.add('highlight')	//先去除在添加，防止多个高亮
 		}
+		//鼠标移动到li时出现下划线和二级菜单
 		let liTags = document.querySelectorAll('nav.menu > ul > li')
 		for (let i = 0; i < liTags.length; i++) {
 			liTags[i].onmouseenter = function(x){
@@ -218,6 +230,7 @@
 				x.currentTarget.classList.remove('active')
 			}
 		}
+		//缓动跳转
 		let aTags = document.querySelectorAll('nav.menu > ul >li >a')
 		function animate(time) {
 			requestAnimationFrame(animate);
@@ -228,10 +241,10 @@
 			aTags[i].onclick = function(xx){
 				xx.preventDefault()
 				let a = xx.currentTarget
-				let href = a.getAttribute('href')
+				let href = a.getAttribute('href')	//用户输入的href
 				let element = document.querySelector(href)
-				let top = element.offsetTop
-				let currentTop = window.scrollY
+				let top = element.offsetTop		//距离整个页面顶部的高度
+				let currentTop = window.scrollY		//当前视口距离页面顶部高度
 				let targetTop = top-70
 				let s = targetTop - currentTop
 				let t = Math.abs(s/100*300)

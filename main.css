@@ -23,6 +23,13 @@ h1,h2,h3,h4,h5,h6{
     display: block;
     clear: both;
 }
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 1s;
+}
 .TopNavBar{
     padding: 20px 0px;
     position: fixed;
@@ -286,14 +293,17 @@ main .self-introduction{
     background-color: #fae1e1;
     border-radius: 2px;
     margin-top: 5px;
-    
+    overflow: hidden;   
 }
 .skills ol>li .progress{
     height: 100%;
     background: #e6686a;
-    width: 70%;
     border-radius: 2px;
-
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+.skills.offset ol>li .progress{
+    transform: translateX(-100%);
 }
 .portfolio{
     text-align: center;
