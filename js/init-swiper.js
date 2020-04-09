@@ -1,17 +1,27 @@
-var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+!function(){
+      var view = document.querySelector('#myslide')
+      var controller = {
+            view:null,
+            Swiper:null,
+            init:function(view){
+                  this.view = view
+                  this.initSwiper()
+            },
+            initSwiper:function(){
+                  this.Swiper = new Swiper (view.querySelector('.swiper-container'), {
+                        direction: 'horizontal',
+                        loop: true,
+                        pagination: {
+                              el: '.swiper-pagination',
+                        },
+                        navigation: {
+                              nextEl: '.swiper-button-next',
+                              prevEl: '.swiper-button-prev',
+                        },
+                  })
+            }
+      }
+controller.init(view)
+}.call()
 
-    // If we need pagination
-    pagination: {
-          el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-    },
-
-  })
+  

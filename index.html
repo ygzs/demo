@@ -158,21 +158,23 @@
 				portfoliobar.className = 'bar state-3'
 			}
 		</script>
-		<!-- Slider main container -->
-		<div class="swiper-container" style="margin-top: 30px;">
-    		<!-- Additional required wrapper -->
-    		<div class="swiper-wrapper">
-       			<!-- Slides -->
-        		<img src="./img/nav.jpg" class="swiper-slide">
-        		<img src="./img/cancas.jpg" class="swiper-slide">
-        		<img src="./img/slide.jpg" class="swiper-slide">
-    		</div>
+		<div id="myslide">
+			<!-- Slider main container -->
+			<div class="swiper-container" style="margin-top: 30px;">
+    			<!-- Additional required wrapper -->
+    			<div class="swiper-wrapper">
+       				<!-- Slides -->
+        			<img src="./img/nav.jpg" class="swiper-slide">
+        			<img src="./img/cancas.jpg" class="swiper-slide">
+        			<img src="./img/slide.jpg" class="swiper-slide">
+    			</div>
     		<!-- If we need pagination -->
     		<div class="swiper-pagination"></div>
+			</div>
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
 	</section>
 	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 	<script src="./js/init-swiper.js"></script>
