@@ -1,5 +1,6 @@
 //先给所有data-x元素加上offset
-let specialTags = document.querySelectorAll('[data-x]')
+!function(){
+    let specialTags = document.querySelectorAll('[data-x]')
 	for (let index = 1; index < specialTags.length; index++) {
 		specialTags[index].classList.add('offset')
     }
@@ -33,3 +34,5 @@ function FindClosestAndRemoveOffset(){
     li.classList.add('highlight')	//先去除在添加，防止多个高亮
 }
 
+
+}.call()

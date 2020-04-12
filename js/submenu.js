@@ -1,10 +1,30 @@
 //鼠标移动到li时出现下划线和二级菜单
-let liTags = document.querySelectorAll('nav.menu > ul > li')
-for (let i = 0; i < liTags.length; i++) {
-    liTags[i].onmouseenter = function(x){
-        x.currentTarget.classList.add('active')
+!function(){
+    var view = View('nav.menu')
+    var controller = {
+        view:null,
+        init:function(view){
+            this.view = view
+            this.liTags = this.view.querySelectorAll('nav.menu > ul > li')
+            this.bindEVents()
+        },
+        bindEVents:function(){
+            let liTags = this.liTags
+            for (let i = 0; i < liTags.length; i++) {
+                liTags[i].onmouseenter = (x) => {
+                    this.active(i)
+                }
+                liTags[i].onmouseleave = (x) => {
+                   this.deactive(i)
+                }
+            }
+        },
+        active:function(index){
+            this.liTags[index].classList.add('active')
+        },
+        deactive:function(index){
+            this.liTags[index].classList.remove('active')
+        },
     }
-    liTags[i].onmouseleave = function(x){
-        x.currentTarget.classList.remove('active')
-    }
-}
+controller.init(view)
+}.call()

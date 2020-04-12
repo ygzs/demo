@@ -1,5 +1,5 @@
 !function(){
-      var view = document.querySelector('#myslide')
+      var view = View('#myslide')
       var controller = {
             view:null,
             Swiper:null,
