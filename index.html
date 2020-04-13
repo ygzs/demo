@@ -176,13 +176,29 @@
 			<div class="swiper-button-next"></div>
 		</div>
 	</section>
+	<section class="message">
+		<h2>留言</h2>
+		<ol id="messageList">
+		</ol>
+		<form id="List">
+			<label for="">姓名</label>
+			<input type="text" name="name" class="name">
+			<label for="">内容</label>
+			<input type="text" name="content" class="content">
+			<input type="submit" value="提交">
+		</form>
+	</section>
 	<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
+	<script src="./js/base/View.js"></script>
+
 	<script src="./js/init-swiper.js"></script>
 	<script src="./js/loading.js"></script>
 	<script src="./js/screen-scroll-bar.js"></script>
 	<script src="./js/Screen-scroll-up.js"></script> 
 	<script src="./js/submenu.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 	<script src="./js/page-skip.js"></script>
+	<script src="./js/message.js"></script>
 </body>
 </html>
