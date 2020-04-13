@@ -1,8 +1,7 @@
 !function(){
   var view = View('#List')
 
-
-  var model = {
+var model = {
     initAV:function(){
       AV.init({
       appId: "ydWA3xnYqAhAdEDHRrBcbXdQ-gzGzoHsz",
@@ -22,7 +21,6 @@
       return message.save()
     }
   }
-
 
   var controller = {
     view:null,
@@ -58,7 +56,10 @@
       let myform = this.form
       let name = myform.querySelector('.name').value
       let content = myform.querySelector('.content').value
-      this.model.save(name,content)
+      this.model.save({
+          'name':name,
+          'content':content,
+        })
         .then(function (object) {
           let li = document.createElement('li')
           li.innerText = `${object.attributes.name}:${object.attributes.content}`
@@ -69,13 +70,7 @@
           content = ''
         })
     },
-
-
-  }
-
-  
-
-  
+}
   
 controller.init(view,model) 
 }.call()
