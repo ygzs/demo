@@ -1,14 +1,16 @@
 window.Model = function(options){
     let resourceName = options.resourceName
     return {
-      init: function(){
-        var APP_ID = 'TsDnap9SEXjSvGSowP7gXXJC-gzGzoHsz'
-        var APP_KEY = 'rGye31p12mM3wFpNRn9RADu9'
-        AV.init({ appId: APP_ID, appKey: APP_KEY })
+      initAV:function(){
+        AV.init({
+        appId: "ydWA3xnYqAhAdEDHRrBcbXdQ-gzGzoHsz",
+        appKey: "FSpJbRyD0NknTLSt2KQ64B3z",
+        serverURL: "https://ydwa3xny.lc-cn-n1-shared.com"
+        })
       },
       fetch: function(){
         var query = new AV.Query(resourceName);
-        return query.find() // Promise 对象
+        return query.find()
       },
       save: function(object){
         var X = AV.Object.extend(resourceName);
