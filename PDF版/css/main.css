@@ -1,0 +1,352 @@
+body{
+    background: #dedede;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+img{
+    width: 100%;
+}
+ul,ol{
+    list-style: none;
+}
+hr{
+    height: 0px;
+    border: none;
+    border-top: 1px solid #dedede;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
+.TopNavBar{
+    position: absolute;
+    padding: 20px 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    transition: all 0.5s    ;
+    color: #b7b7b7;
+    z-index: 1;
+}
+.TopNavBar-in{
+    padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TopNavBar nav{
+    padding-bottom: 1px;
+    padding-top: 10px;
+}
+.TopNavBar nav>ul{
+    list-style: none;
+}
+.TopNavBar nav>ul>li{
+    float: left;
+    margin: 0px 25px;
+    position: relative;
+}
+.TopNavBar nav>ul>li>a{
+    font-size: 15px;
+    font-weight: bold;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+    position: relative;
+}
+.TopNavBar nav>ul>li.active>a::after,
+.TopNavBar nav>ul>li.highlight>a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    height: 3px;
+    background: #e06567;
+    animation: slide 0.3s;
+}
+@keyframes slide{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+.TopNavBar .submenu{
+    list-style: none;
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    background: white;
+    color: #3d4451;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.TopNavBar li.active .submenu{
+    display: block;
+    animation: submenuslide 0.3s;
+}
+@keyframes submenuslide {
+    0%{
+        margin-right:100%;
+    }
+    100%{
+        margin-right:0%;
+    }
+}
+.TopNavBar .submenu > li{
+    white-space: nowrap;
+    padding: 5px 10px;
+}
+.TopNavBar .logo{
+    font-size: 50px;
+    font-family: Arial;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+.TopNavBar .logo .rs{
+    margin-right: 4px;
+    color: #e06567;
+}
+.TopNavBar .logo .card{
+    color: #9a9da2;
+}
+.banner{
+    height: 450px;
+    background-image: url(../img/rs.jpg);
+    background-position: center center;
+    background-size: cover;
+}    
+.banner .mask{
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.usercard{
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.usercard .picture img{
+    width: 210px;
+    height: 243px;
+}
+.usercard .welcome{
+    background: #e6686a;
+    color: white;
+    display: inline-block;
+    padding: 4px 11px 4px 11px;
+    line-height: 22px;
+    position: relative;
+}
+.welcome .triangle{
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #e6686a;
+    border-top-width: 0px;
+    display: block;
+    position: absolute;
+    left: 4px;
+    top: 98%;
+}
+.usercard .PictureAndText{
+    padding: 28px 35px;
+}
+.usercard .text{
+    float: left;
+    margin-left: 45px;
+    width: 308px;
+}
+.usercard .text h1{
+    margin-top: 20px;
+}
+.usercard .text h4{
+    margin-top: 6px;
+}
+.usercard .text hr{
+    margin: 11px 0px;
+}
+.usercard dl dd,
+.usercard dl dt{
+    float: left;
+    padding: 4px 0px;
+}
+.usercard dl dt{
+    width: 35%;
+    font-weight: bold;
+}
+.usercard dl dd{
+    width: 65%;
+    color: gray;
+}
+.usercard .picture{
+    float: left;
+}
+.usercard .media{
+    background: #e6686a;
+    text-align: center;
+}
+.usercard svg{
+    width: 25px;
+    height: 25px;
+    fill: white;
+    vertical-align: top;
+}
+.usercard .media a{
+    display: inline-block;
+    border-radius: 50%;
+    line-height: 30px;
+    width: 28px;
+    padding: 3.5px 0px;
+    margin: 11px;
+}
+.usercard .media a:hover{
+    background: #cf5d5f;
+}
+main .download-resume-wrapper{
+    text-align: center;
+}
+main .download-resume{
+    font-size: 14px;
+    line-height: 16px;
+    padding: 21px 55px;
+    display: inline-block;
+    border: 1px solid #cdcfd1;
+    background: #efefef;
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    margin: 32px 0px;
+    transition: box-shadow 0.2s;
+}
+main .download-resume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0, 0, 0, 0.2);
+}
+main .self-introduction{
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 13px;
+    font-family: kai;
+    line-height: 27px;
+}
+.skills{
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.skills h2,
+.portfolio h2,
+.message h2{
+    color: #3d4451;
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.skills ol{
+    list-style: none;
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    padding: 30px 35px 8px 35px; 
+}
+.skills ol>li{
+    color: rgb(71, 69, 69);
+    float: left;
+    width: 47%;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 24px;
+    box-sizing: border-box;
+}
+.skills ol>li:nth-child(even){
+    float: right;
+}
+.skills ol>li .progress-bar{
+    height: 3.5px;
+    background-color: #fae1e1;
+    border-radius: 2px;
+    margin-top: 3.5px;
+    overflow: hidden;   
+}
+.skills ol>li .progress{
+    height: 100%;
+    background: #e6686a;
+    border-radius: 2px;
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+.skills.offset ol>li .progress{
+    transform: translateX(-100%);
+}
+.skills ol>li>p{
+    padding: 3px;
+    font-weight: normal;
+}
+.portfolio{
+    margin-top: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 780px;
+}
+.portfolio ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio ul>li{
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10px;
+}
+.portfolio ul>li>a{
+    display: inline-block; 
+    font-size: 0px;
+}
+.message{
+    margin:50px auto 100px auto; 
+    max-width: 500px;
+}
+.message #messageList{
+    background-color: white;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    list-style: none;
+    max-width: 700px;
+    margin: 0px auto;
+}
+.message #messageList > li {
+    padding: 16px;
+    border-bottom: 1px solid #e6686a;
+}
+.message #messageList > li:last-child{
+    border-bottom: none;
+}
+.message .list-wapper{
+    text-align: center;
+    margin: 30px 0px;
+}
