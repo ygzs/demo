@@ -13,7 +13,7 @@
         scrollToElement:function(element){
             let top = element.offsetTop		//距离整个页面顶部的高度
                     let currentTop = window.scrollY		//当前视口距离页面顶部高度
-                    let targetTop = top-70
+                    let targetTop = top-30
                     let s = targetTop - currentTop
                     let t = Math.abs(s/100*300)
                     if(t>500){
@@ -29,7 +29,7 @@
                         .start();		//开始
         },
         bindEvents:function(){
-            let aTags = this.view.querySelectorAll('nav.menu > ul >li >a')
+            let aTags = this.view.querySelectorAll('[data-Y]')
             for (let i = 0; i < aTags.length; i++) {
                 aTags[i].onclick = (xx) => {
                     xx.preventDefault()

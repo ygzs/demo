@@ -16,26 +16,39 @@
 			</a>
 		<nav class="menu"> 
 			<ul class="clearfix">
-				<li><a href="#siteAbout">关于</a></li>
-				<li><a href="#siteSkills">技能</a></li>
-				<li>
-					<a href="#siteWorks">作品</a>
-					<ul class="submenu">
-						<li>作品一</li>
-						<li>作品二</li>
-						<li>作品三</li>
-					</ul>
-				</li>
+				<li><a href="#siteAbout" data-Y>关于</a></li>
+				<li><a href="#siteSkills" data-Y>技能</a></li>
+				<li><a href="#siteWorks" data-Y>作品</a></li>
 				<li>
 					<a href="#">博客</a>
 					<ul class="submenu">
-						<li>博客一</li>
-						<li>博客二</li>
+						<li>
+							<a href="https://github.com/ygzs/blog">博客一</a>
+						</li>
+						<li>
+							<a href="https://mp.csdn.net/console/article">博客二</a>
+						</li>
 					</ul>
 				</li>
-				<li><a href="#">日历</a></li>
-				<li><a href="#">联系方式</a></li>
-				<li><a href="#">其他</a></li>
+				<li>
+					<a href="#">knickknack</a>
+					<ul class="submenu">
+						<li>
+							<a href="https://ygzs.github.io/works/pikachu/index.html">pikachu</a>
+						</li>
+						<li>
+							<a href="https://ygzs.github.io/works/act-resume/1.html">act-resume</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">联系方式</a>
+					<ul class="submenu">
+						<li>QQ：xxx</li>
+						<li>手机：yyy</li>
+						<li>微信：zzz</li>
+					</ul>
+				</li>
 			</ul>
 		</nav>
 		</div>
@@ -51,18 +64,18 @@
 				    <span class="welcome">您好！
 						<span class="triangle"></span>
 					</span>
-				    <h1>郑鹏</h1>
+				    <h1>xxx</h1>
 				    <h4>前端开发工程师</h4>
 			    <hr>
 			        <dl>
 				    <dt>年龄</dt>
 				    <dd>22</dd>
 				    <dt>所在城市</dt>
-				    <dd>河南-安阳</dd>
+				    <dd>xxx-xxx</dd>
 				    <dt>邮箱</dt>
-				    <dd>1103449238@qq.com</dd>
+				    <dd>xxxx@xxxx.com</dd>
 					<dt>毕业学校</dt>
-				    <dd>河南师范大学</dd> 
+				    <dd>xxxx大学</dd> 
 			        </dl>	
 			    </div>
 		    </div>
@@ -91,8 +104,8 @@
 	</p>
 	</main>
     <section data-x id="siteSkills" class="skills">
-		<h2>技能</h2>
-		<ol class="clearfix">
+		<h2 class="title">技能</h2>
+		<ol class="content clearfix">
 			<li>HTML 5 &amp; CSS 3
 				<p> CSS 3 动画、过渡效果、响应式等常用技术</p>
 				<div class="progress-bar">
@@ -132,8 +145,8 @@
 		</ol>
 	</section>
 	<section data-x id="siteWorks" class="portfolio">
-		<h2>作品集</h2>
-		<ul>
+		<h2 class="title">作品集</h2>
+		<ul class="content">
 			<li>
 				<a href="https://ygzs.github.io/works/canvas/1.html">
 					<img src="./img/cancas.jpg" class="end">
@@ -162,8 +175,8 @@
 				</div>
 			</li>
 			<li>
-				<a href="https://ygzs.github.io/works/pikachu/index.html">
-					<img src="./img/pikachu.png" class="end">
+				<a href="https://ygzs.github.io/vue-demo/second-demo/index.html">
+					<img src="./img/vue.jpg" class="end">
 				</a>
 				<div>
 					<p>简介</p>
@@ -172,9 +185,9 @@
 			</li>
 		</ul>
 	</section>
-	<section class="message">
-		<h2>留言</h2>
-		<div class="list-wapper">
+	<section  data-x id="message" class="message">
+		<h2 class="title">留言</h2>
+		<div class="list-wapper content">
 			<form id="List">
 				<label for="">姓名</label>
 				<input type="text" name="name" class="name">
@@ -186,6 +199,7 @@
 		<ol id="messageList">
 		</ol>
 	</section>
+	<script src="https://unpkg.com/scrollreveal"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.5.3/dist/av-min.js"></script>
 	<script src="./js/base/View.js"></script>

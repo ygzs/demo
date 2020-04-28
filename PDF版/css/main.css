@@ -312,7 +312,7 @@ main .self-introduction{
     margin-top: 42px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 780px;
+    max-width: 735px;
 }
 .portfolio ul{
     display: flex;
@@ -322,14 +322,14 @@ main .self-introduction{
     display: block;
     box-sizing: border-box;
     width: 50%;
-    padding: 10px;
+    padding: 7px;
 }
 .portfolio ul>li>a{
     display: inline-block; 
     font-size: 0px;
 }
 .message{
-    margin:50px auto 100px auto; 
+    margin:50px auto 40px auto; 
     max-width: 500px;
 }
 .message #messageList{

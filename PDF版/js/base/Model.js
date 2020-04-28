@@ -10,7 +10,7 @@ window.Model = function(options){
       },
       fetch: function(){
         var query = new AV.Query(resourceName)
-        query.limit(3)
+        query.limit(4)
         query.descending('createdAt');
         return query.find()
       },
