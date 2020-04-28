@@ -29,7 +29,7 @@
                         .start();		//开始
         },
         bindEvents:function(){
-            let aTags = this.view.querySelectorAll('nav.menu > ul >li >a')
+            let aTags = this.view.querySelectorAll('[data-Y]')
             for (let i = 0; i < aTags.length; i++) {
                 aTags[i].onclick = (xx) => {
                     xx.preventDefault()

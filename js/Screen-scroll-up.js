@@ -1,15 +1,11 @@
 //先给所有data-x元素加上offset
 !function(){
-    let specialTags = document.querySelectorAll('[data-x]')
-	for (let index = 1; index < specialTags.length; index++) {
-		specialTags[index].classList.add('offset')
-    }
-
-FindClosestAndRemoveOffset()
-
-window.addEventListener('scroll',function(){
-    FindClosestAndRemoveOffset()
-})
+    ScrollReveal().reveal('.PictureAndText')
+    ScrollReveal().reveal('.media')
+    ScrollReveal().reveal('.download-resume')
+    ScrollReveal().reveal('.self-introduction')
+    ScrollReveal().reveal('.title')
+    ScrollReveal().reveal('.content')
 
 //查找离视口顶部最近的元素
 function FindClosestAndRemoveOffset(){	
@@ -21,8 +17,6 @@ function FindClosestAndRemoveOffset(){
             minIndex = index
         }
     }
-    //去除offset
-    specialTags[minIndex].classList.remove('offset')
     //高亮当前的元素
     let id = specialTags[minIndex].id	//最近的元素的id
     let a = document.querySelector(' a[href="#' + id + '"] ')	//id对应的a标签
@@ -33,6 +27,5 @@ function FindClosestAndRemoveOffset(){
     }
     li.classList.add('highlight')	//先去除在添加，防止多个高亮
 }
-
 
 }.call()
